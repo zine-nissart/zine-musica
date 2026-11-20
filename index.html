@@ -179,13 +179,13 @@ const SORTIES = [
  {i:"0C9D85D0",t:"Hymne de Falicon",a:2026,k:"single",l:HF+"zine/hymne-de-falicon-2",b:Z+"/post/sortie-musicale-hymne-de-falicon",d:"L’identité, l’histoire et les paysages de Falicon, des oliviers aux œillets, jusqu’à la grotte de la Ratapignata."},
  {i:"C4DC2F71",t:"Casternòu",a:2026,k:"single",l:HF+"zine/casternu",b:Z+"/post/sortie-musicale-single-castern%C3%B2u",d:"Une ancienne comptine occitane malicieuse : neuf jeunes filles veulent danser…"},
  {i:"30400FDE",t:"Petits farcis niçois",a:2026,k:"album",l:HF+"zine41/petits-farcis-niois-3",b:Z+"/post/sortie-musicale-petit-farcis-ni%C3%A7ois",s:Z+"/product-page/zine-double-album-digital-petits-far%C3%A7is-ni%C3%A7ois",d:"24 chansons écrites entre 2000 et 2021, longtemps restées dans les tiroirs : un carnet musical à cœur ouvert."},
- {i:"",t:"Poesia de Nòste",a:2026,k:"livre",b:Z+"/post/poesia-de-n%C3%B2ste-une-anthologie-essentielle-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",s:Z+"/product-page/anthologie-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",d:"Anthologie de la poésie féminine occitane contemporaine : plus de soixante-dix poétesses, dont Zine."},
- {i:"",t:"Fraternitat Mediterranèa",a:2026,k:"livre",b:Z+"/post/fraternitat-mediterran%C3%A8a-quand-les-voix-de-la-m%C3%A9diterran%C3%A9e-se-r%C3%A9pondent",s:Z+"/product-page/fraternitat-mediterranea",d:"Ouvrage collectif : les voix et les langues des deux rives de la Méditerranée se répondent."}
+ {i:"https://static.wixstatic.com/media/4028a4_e6cd8565a3754a0d94fa7dbc5c980051~mv2.jpg/v1/fit/w_600,h_600,q_85/poesia-de-noste.jpg",t:"Poesia de Nòste",a:2026,k:"livre",b:Z+"/post/poesia-de-n%C3%B2ste-une-anthologie-essentielle-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",s:Z+"/product-page/anthologie-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",d:"Anthologie de la poésie féminine occitane contemporaine : plus de soixante-dix poétesses, dont Zine."},
+ {i:"https://static.wixstatic.com/media/4028a4_714559b6ada2420982c15e55ead8062e~mv2.jpg/v1/fit/w_600,h_600,q_85/fraternitat-mediterranea.jpg",t:"Fraternitat Mediterranèa",a:2026,k:"livre",b:Z+"/post/fraternitat-mediterran%C3%A8a-quand-les-voix-de-la-m%C3%A9diterran%C3%A9e-se-r%C3%A9pondent",s:Z+"/product-page/fraternitat-mediterranea",d:"Ouvrage collectif : les voix et les langues des deux rives de la Méditerranée se répondent."}
 ];
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 function carte(s){
   const el=document.createElement('article'); el.className='sortie';
-  const img = s.i ? `<div class="pochette"><img loading="lazy" src="pochettes/${s.i}.jpg" alt="Pochette : ${esc(s.t)}"></div>` : `<div class="pochette vide" aria-hidden="true">📖</div>`;
+  const img = s.i ? `<div class="pochette"><img loading="lazy" src="${s.i.startsWith('http')?s.i:'pochettes/'+s.i+'.jpg'}" alt="Pochette : ${esc(s.t)}"></div>` : `<div class="pochette vide" aria-hidden="true">📖</div>`;
   let btn='';
   if(s.l) btn+=`<a class="ecouter" href="${s.l}" target="_blank" rel="noopener">▶ Écouter</a>`;
   if(s.b) btn+=`<a class="histoire" href="${s.b}" target="_blank" rel="noopener">Histoire et paroles</a>`;
