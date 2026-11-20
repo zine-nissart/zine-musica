@@ -203,7 +203,7 @@ for(const k of ['album','single','livre']) SORTIES.filter(s=>s.k===k).sort(recen
 // Vidéos : l'image s'affiche d'abord, le lecteur YouTube ne se charge qu'au clic (plus léger sur téléphone)
 document.querySelectorAll('.ecran[data-v]').forEach(e=>{
   const v=e.dataset.v, nom=e.nextElementSibling.firstChild.textContent;
-  e.innerHTML=`<button type="button" aria-label="Regarder : ${esc(nom)}"><img loading="lazy" src="https://i.ytimg.com/vi/${v}/hqdefault.jpg" alt=""><span class="play"></span></button>`;
+  e.innerHTML=`<button type="button" aria-label="Regarder : ${esc(nom)}"><img loading="lazy" src="https://i.ytimg.com/vi/${v}/maxresdefault.jpg" onload="if(this.naturalWidth<200)this.src='https://i.ytimg.com/vi/${v}/mqdefault.jpg'" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v}/mqdefault.jpg'" alt=""><span class="play"></span></button>`;
   e.querySelector('button').addEventListener('click',()=>{
     e.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${v}?autoplay=1&rel=0" title="${esc(nom)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
   });
