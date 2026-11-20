@@ -1,5 +1,5 @@
 // Petit service worker : garde l'appli disponible hors connexion (pages et pochettes).
-const CACHE = 'zine-musica-v3';
+const CACHE = 'zine-musica-v4';
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(self.clients.claim()); });
 self.addEventListener('fetch', e => {
