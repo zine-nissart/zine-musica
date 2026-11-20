@@ -1,0 +1,16 @@
+{
+  "name": "Zine – mes chansons",
+  "short_name": "Zine",
+  "description": "Toutes les chansons de Zine, trobairitz niçoise : albums, singles, livres, histoires et paroles.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {"src": "icone-180.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icone.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

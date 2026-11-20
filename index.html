@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zine – mes chansons</title>
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="description" content="Toutes les chansons de Zine, trobairitz niçoise : albums, singles, livres, histoires et paroles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--fond:#ffffff;--encre:#1d1d1b;--violet:#7b5aa0;--mimosa:#f3e27a;--gris:#5f5a66;--trait:#e6e0ee;--doux:#f6f3fa}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--fond);color:var(--encre);font-family:Sora,system-ui,sans-serif;font-size:18px;line-height:1.5}
+  a{color:inherit}
+  .page{max-width:760px;margin:0 auto;padding:22px 16px 60px}
+
+  header{text-align:center;padding:6px 0 4px}
+  header h1{margin:0}
+  header .logo{width:min(340px,85vw);height:auto;display:block;margin:0 auto}
+  .sous{display:inline-block;font-size:20px;color:var(--violet);font-weight:600;margin:6px 0 0;padding:0 6px 2px;background:linear-gradient(transparent 60%,var(--mimosa) 60%)}
+  .titan{font-size:19px;font-style:italic;margin:16px auto 0;max-width:30em}
+  .photo{display:block;width:100%;height:auto;border-radius:16px;margin:18px auto 0}
+  .intro{font-size:17px;color:var(--gris);margin:12px auto 0;max-width:34em;font-weight:300;text-align:left}
+  .intro b{color:var(--encre);font-weight:600}
+
+  .plateformes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0 6px}
+  .plateformes a{text-decoration:none;font-weight:600;font-size:17px;padding:11px 17px;border-radius:999px;background:#fff;border:2px solid var(--trait)}
+  .plateformes a.principal{background:var(--violet);border-color:var(--violet);color:#fff}
+
+  .onglets{position:sticky;top:0;z-index:5;background:var(--fond);display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px 0;margin-top:14px;border-bottom:1px solid var(--trait)}
+  .onglets button{font:600 16px Sora,sans-serif;padding:9px 15px;border-radius:999px;border:2px solid var(--violet);background:transparent;color:var(--violet);cursor:pointer}
+  .onglets button[aria-pressed="true"]{background:var(--violet);color:#fff}
+
+  h2{font-family:"Open Sans",Sora,sans-serif;font-weight:800;font-size:26px;margin:28px 0 12px}
+  .liste{display:flex;flex-direction:column;gap:14px}
+  .sortie{display:grid;grid-template-columns:118px 1fr;gap:14px;background:#fff;border:1px solid var(--trait);border-radius:16px;padding:12px}
+  @media (min-width:600px){.sortie{grid-template-columns:150px 1fr}}
+  .pochette{aspect-ratio:1/1;background:var(--doux);border-radius:10px;overflow:hidden;align-self:start}
+  .pochette img{width:100%;height:100%;object-fit:contain;display:block}
+  .pochette.vide{display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--violet)}
+  .titre{font-weight:700;font-size:18px;line-height:1.3;margin:0}
+  .annee{font-size:15px;color:var(--gris);margin-top:2px}
+  .desc{font-size:15.5px;margin:8px 0 0;color:#2c2930}
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .actions a{text-decoration:none;font-size:15px;font-weight:600;padding:7px 13px;border-radius:999px}
+  .ecouter{background:var(--mimosa);color:var(--encre)}
+  .histoire{background:var(--violet);color:#fff}
+  .acheter{border:2px solid var(--violet);color:var(--violet)}
+
+  .integrale{margin:36px 0 0;background:var(--doux);border-radius:16px;padding:18px;text-align:center}
+  .integrale .gros{font-family:"Open Sans",Sora,sans-serif;font-weight:800;font-size:21px;margin:0}
+  .integrale p{margin:8px 0}
+  .integrale a{display:inline-block;margin-top:6px;text-decoration:none;font-weight:600;padding:11px 18px;border-radius:999px;background:var(--violet);color:#fff}
+  footer{margin-top:34px;text-align:center;font-size:16px;color:var(--gris)}
+  footer a{color:var(--violet);font-weight:600}
+  .merci{font-size:20px;color:var(--encre);font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1><img class="logo" src="logo-zine.svg" alt="Zine"></h1>
+    <p class="sous">trobairitz niçoise</p>
+    <p class="titan">Titanesque… plusieurs disques et recueils de poésie… une vie de création en indépendante…</p>
+    <img class="photo" src="zine-genova-10.jpg" alt="Zine sur scène à Gênes, avec ses ailes de lumière">
+    <p class="intro"><b>Zine, trobairitz libre, féministe et engagée.</b> Elle s’inscrit dans la lignée des trobairitz, ces femmes troubadours du Moyen Âge occitan. Chez elle, le niçois n’est pas un vestige à préserver sous cloche : il est vivant, indocile, ouvert aux rencontres et aux idées. Plus de 150 chansons déposées à la Sacem et distribuées sur les plateformes.</p>
+  </header>
+
+  <nav class="plateformes" aria-label="Écouter Zine sur">
+    <a class="principal" href="https://www.zine.fr/parutionszine">zine.fr</a>
+    <a href="https://open.spotify.com/artist/6ZYnIJZCznvVFbfTLL8dKN">Spotify</a>
+    <a href="https://www.deezer.com/artist/147464522">Deezer</a>
+    <a href="https://music.apple.com/fr/artist/zine/1554399308">Apple Music</a>
+    <a href="https://www.youtube.com/@Zine">YouTube</a>
+  </nav>
+
+  <div class="onglets" role="group" aria-label="Choisir">
+    <button type="button" data-f="tout" aria-pressed="true">Tout</button>
+    <button type="button" data-f="album" aria-pressed="false">Albums &amp; EP</button>
+    <button type="button" data-f="single" aria-pressed="false">Singles</button>
+    <button type="button" data-f="livre" aria-pressed="false">Livres</button>
+  </div>
+
+  <section data-k="album"><h2>Albums &amp; EP</h2><div class="liste" id="g-album"></div></section>
+  <section data-k="single"><h2>Singles</h2><div class="liste" id="g-single"></div></section>
+  <section data-k="livre"><h2>Livres &amp; recueils</h2><div class="liste" id="g-livre"></div></section>
+
+  <div class="integrale">
+    <p class="gros">Toutes les chansons de Zine dans un seul objet</p>
+    <p>La clé USB « L’intégrale de Zine (2002–2026) » : un bon moyen de tout avoir, en soutenant directement l’artiste.</p>
+    <a href="https://www.zine.fr/product-page/l-int%C3%A9grale-de-zine">Voir la clé USB</a>
+  </div>
+
+  <footer>
+    <p class="merci">Gràcia totplen !</p>
+    <p>Apprendre le niçois : <a href="https://lenicoisenaccelere.fr">lenicoisenaccelere.fr</a></p>
+    <p>Tous mes liens : <a href="https://linktr.ee/ZineMissPantai">linktr.ee/ZineMissPantai</a></p>
+  </footer>
+</div>
+
+<script>
+const Z="https://www.zine.fr", HF="https://distrokid.com/hyperfollow/";
+// i = pochette, t = titre, a = année, k = type, l = écoute (HyperFollow), b = article du blog, s = boutique, d = texte (page Parutions)
+const SORTIES = [
+ {i:"ACC98858",t:"Et la joie passera en funambule… sur le fil de la folie douce",a:2002,k:"album",l:HF+"zine/et-la-joie-passera-en-funambulesur-le-fil-de-la-folie-douce",b:Z+"/post/sortie-musicale-et-la-joie-passera-en-funambume-sur-le-fil-de-la-folie-douce",s:Z+"/product-page/cd-carton-et-la-joie-passera-en-funambule-sur-le-fil-de-la-folie-douce",d:"15 titres pris sur le vif, enregistrés en juillet 2002 à la gare de Saint-Dalmas-de-Tende. Autoproduction, 450 exemplaires vendus."},
+ {i:"141702E9",t:"Zine et la Quincaille – Cherche",a:2003,k:"album",l:HF+"zine/cherche",b:Z+"/post/sortie-musicale-cherche",s:Z+"/product-page/album-cd-physique-zine-et-la-quincaille",d:"Un petit bijou de 4 titres enregistré dans l’ancienne caserne des Diau Blu, avec Luc Canavesio à l’accordéon. Prix Défi Jeunes du ministère."},
+ {i:"52BFB7E0",t:"Mon Coiffeur",a:2005,k:"album",l:HF+"zine/mon-coiffeur",b:Z+"/post/sortie-musicale-mon-coiffeur",s:Z+"/product-page/zine-mon-coiffeur",d:"5 titres avec le label Gallomusic : des versions à la sauce bretonne de mes chansons en français, avec déjà du niçois dedans évidemment…"},
+ {i:"5E176DB0",t:"Folie Douce",a:2009,k:"album",l:HF+"zine/folie-douce",b:Z+"/post/sortie-musicale-folie-douce",s:Z+"/product-page/zine-double-album-folie-douce-34-chansons",d:"14 titres produits avec LAQM, entre chanson et électro, avec de nombreux musiciens invités."},
+ {i:"cantates",t:"Cantates d’Azur",a:2018,k:"livre",b:Z+"/post/sortie-musicale-cantates-d-azur",s:Z+"/product-page/cantates-d-azur-livre-et-double-cd-27-titres",d:"Livre + double CD : 27 chansons bilingues niçois/français, illustrées par Richard Roux, aux éditions Baie des Anges."},
+ {i:"DF090C7B",t:"Folie Douce FACE B",a:2020,k:"album",l:HF+"zine/folie-douce-face-b-2",b:Z+"/post/sortie-musicale-folie-douce-face-b",s:Z+"/product-page/zine-double-album-folie-douce-34-chansons",d:"20 chansons inédites ou revisitées qui complètent Folie Douce : des essais, des répétitions, des lives !"},
+ {i:"BC525D10",t:"Palhassina Universala",a:2021,k:"album",l:HF+"zine/palhassina-universala-2",b:Z+"/post/sortie-musicale-palhassina-universala",s:Z+"/product-page/palhassina-universala",d:"Un album collector OVNI de 35 chansons, des années 2000 à 2020. La femme-clown internationale !"},
+ {i:"F2960033",t:"Où sommes-nous ? (feat. LAQM & Etel Adnan)",a:2023,k:"single",l:HF+"zine/o-sommes-nous--feat-etel-adnan",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-o%C3%B9-sommes-nous-par-zine",d:"Une chanson née d’un texte d’Etel Adnan, rencontrée à Tanger en 2004 à la Librairie des Colonnes."},
+ {i:"92598487",t:"Les petites mains",a:2020,k:"single",l:HF+"zine/les-petites-mains-3",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-les-petites-mains-par-zine",d:"L’importance de tous les métiers dans la société. « On a besoin de tout le monde… et spécialement les petites mains… »"},
+ {i:"F04A22C8",t:"Au mercat de la Libé (feat. Jeff Bosch)",a:2020,k:"single",l:HF+"zine/au-mercat-de-la-lib-2",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-au-mercat-de-la-lib%C3%A9-par-zine",d:"Un hommage à la vie et à nos marchés : retour au marché de la Libération, à Nice."},
+ {i:"BF37BDB2",t:"Chansons niçoises pour les enfants",a:2021,k:"album",l:HF+"zine/chansons-pour-les-enfants",b:Z+"/post/sortie-musicale-chansons-ni%C3%A7oises-pour-les-enfants",s:Z+"/product-page/cd-carton-chansons-nicoises-pour-les-enfants",d:"4 chansons de mes spectacles pour enfants : « Testadure », « Cricri craqueline », « Le magasin du marchand de mamans »…"},
+ {i:"36D2EE15",t:"Ten-te fièra ! (version longue piano)",a:2021,k:"single",l:HF+"zine/ten-te-fira--2",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-ten-te-fi%C3%A8ra-par-zine",d:"Née après la tempête Alex d’octobre 2020 : un message de courage et de résistance face aux épreuves."},
+ {i:"D7B3582B",t:"Hyperballad en occitan (feat. Dhanvantri Dub)",a:2022,k:"single",l:HF+"zine/hyperballad",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-hyperballad-en-occitan-par-zine",d:"D’après Björk, jouée aux tablas par Dhanvantri ; clip tourné près de Dronero, en Italie."},
+ {i:"BA75E7A5",t:"Ànima en festa (feat. Bardus)",a:2022,k:"single",l:HF+"zine/nima-en-festa",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-%C3%A0nima-en-festa-par-zine",d:"« Âme en fête » : un morceau vibrant et spirituel, arrangé avec Bardus, de Florence."},
+ {i:"52937176",t:"Vi siau venguda veire",a:2023,k:"single",l:HF+"zine/vi-siau-venguda-veire",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-vi-siau-venguda-veire-par-zine",d:"D’après Mano Solo : notre belle langue niçoise vient nous dire qu’elle ne veut pas mourir !"},
+ {i:"F2988194",t:"Non plus ren m’estona (feat. Jeff Bosch)",a:2023,k:"single",l:HF+"zine/non-plus-ren-mestona",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-non-plus-ren-m-estona-par-zine",d:"Parodie engagée de Tiken Jah Fakoly, transposée dans le Comté de Nice, avec Jeff Bosch à la vielle à roue."},
+ {i:"C0D1B2CB",t:"Haïkus en occitan (feat. Bardus)",a:2023,k:"single",l:HF+"zine/hakus-en-occitan",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-ha%C3%AFkus-en-occitan-par-zine",d:"Des morceaux de textes à la fois décalés et drôles… Hypnotique !"},
+ {i:"A936F053",t:"Fa créisser lo tieu lume (feat. Bardus)",a:2023,k:"single",l:HF+"zine/fa-crisser-lo-tieu-lume",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-fa-cr%C3%A9isser-lo-tieu-lume-par-zine",d:"Dans les moments difficiles, fais grandir ta lumière… Un texte proposé pour l’anthologie « Paraulas de Hemnas »."},
+ {i:"CDC048B2",t:"Cherche (feat. LAQM)",a:2023,k:"single",l:HF+"zine/cherche-feat-laqm-radio-edit",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-cherche-par-zine",d:"Un hymne à l’espérance, symbole de la « Zine attitude », sur des accents tziganes et des valses tourbillonnantes."},
+ {i:"B17FCCB1",t:"Tant de pleuia (version niçoise)",a:2023,k:"single",l:HF+"zine/tant-de-pleuia",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-tant-de-pleuia-par-zine",d:"D’après Idir : la nécessaire résilience face aux épreuves de la vie."},
+ {i:"22B42A51",t:"Jàcol Titèto (feat. David Nijs)",a:2023,k:"single",l:HF+"zine/jcol-titto",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-jac%C3%B2l-tit%C3%A8to-par-zine",d:"Le Don Quichotte piémontais : le berger qui cherche à traire son bouc pour avoir du lait !"},
+ {i:"3D77526C",t:"Cantar la vida cantar l’esper",a:2023,k:"album",l:HF+"zine/cantar-la-vida-cantar-lesper",b:Z+"/post/sortie-musicale-cantar-la-vida-cantar-l-esper",s:Z+"/product-page/zine-double-album-cantar-la-vida-cantar-l-esper-1",d:"23 titres qui célèbrent la culture occitane, provençale et niçoise : compositions et parodies revisitées avec humour et ancrage local."},
+ {i:"7E732CDD",t:"Ramasse (feat. Gabriele Filippi)",a:2024,k:"single",l:HF+"zine/ramasse",b:Z+"/post/vida-de-trobairitz-%C3%A9pisode-11-dans-les-coulisses-d-un-tournage-de-clip-en-corse",d:"Ne pas jeter trop vite ce qui a de la valeur : objets, souvenirs, relations. L’art pour réparer."},
+ {i:"760A8A67",t:"Raccogli (feat. Gabriele Filippi)",a:2024,k:"single",l:HF+"zine/raccogli-feat-gabriele-filippi",b:Z+"/post/vida-de-trobairitz-%C3%A9pisode-11-dans-les-coulisses-d-un-tournage-de-clip-en-corse",d:"La version italienne de « Ramasse »."},
+ {i:"22BE9733",t:"Pantaisa un pauc",a:2024,k:"single",l:HF+"zine/pantaisa-un-pauc",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-pantaisa-un-pauc-par-zine",d:"« Imagine » de John Lennon en niçois : rêver un monde plus humain, ancré dans la langue d’ici."},
+ {i:"E5FE9BC9",t:"Mi plason lu baudos",a:2024,k:"single",l:HF+"zine/mi-plason-lu-baudos",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-mi-plason-lu-baudos-par-zine",d:"Parodie festive inspirée de Jacques Dutronc, un hymne décalé aux « baudos » niçois."},
+ {i:"B895156F",t:"De Gaza à Jérusalem – من غزّة إلى القدس",a:2024,k:"single",l:HF+"zine/de-gaza--jrusalem-------feat-collectif-radio-edit",b:Z+"/post/chanson-in%C3%A9dite-de-gaza-%C3%A0-j%C3%A9rusalem",d:"Une chanson humaniste de Cheb Zaytoun, avec Zine aux chœurs : la souffrance n’a ni nationalité ni religion."},
+ {i:"483CC392",t:"Bessai ti troverai",a:2025,k:"single",l:HF+"zine/bessai-ti-troverai-radio-edit",b:Z+"/post/la-petite-histoire-de-la-chanson-%C3%A0-textes-bessai-ti-troverai-par-zine",d:"« Peut-être je te trouverai » : d’après un poème d’Alan Peglion tiré de « Coma una mùsica »."},
+ {i:"7E546CDE",t:"La nuech (feat. Lou Serpent)",a:2026,k:"single",l:HF+"zine/la-nuech-feat-lou-serpent",b:Z+"/post/sortie-musicale-single-la-nuech",d:"Un univers nocturne et mystérieux, entre forêts alpines et zones d’ombre de l’âme."},
+ {i:"C896248E",t:"Pilha lo temps (feat. Lou Serpent)",a:2026,k:"single",l:HF+"zine/pilha-lo-temps-feat-lou-serpent",b:Z+"/post/sortie-musicale-single-pilha-lo-temps",d:"Le temps nécessaire pour se reconstruire après des blessures invisibles."},
+ {i:"0C9D85D0",t:"Hymne de Falicon",a:2026,k:"single",l:HF+"zine/hymne-de-falicon-2",b:Z+"/post/sortie-musicale-hymne-de-falicon",d:"L’identité, l’histoire et les paysages de Falicon, des oliviers aux œillets, jusqu’à la grotte de la Ratapignata."},
+ {i:"C4DC2F71",t:"Casternòu",a:2026,k:"single",l:HF+"zine/casternu",b:Z+"/post/sortie-musicale-single-castern%C3%B2u",d:"Une ancienne comptine occitane malicieuse : neuf jeunes filles veulent danser…"},
+ {i:"30400FDE",t:"Petits farcis niçois",a:2026,k:"album",l:HF+"zine41/petits-farcis-niois-3",b:Z+"/post/sortie-musicale-petit-farcis-ni%C3%A7ois",s:Z+"/product-page/zine-double-album-digital-petits-far%C3%A7is-ni%C3%A7ois",d:"24 chansons écrites entre 2000 et 2021, longtemps restées dans les tiroirs : un carnet musical à cœur ouvert."},
+ {i:"",t:"Poesia de Nòste",a:2026,k:"livre",b:Z+"/post/poesia-de-n%C3%B2ste-une-anthologie-essentielle-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",s:Z+"/product-page/anthologie-de-la-po%C3%A9sie-f%C3%A9minine-occitane-contemporaine",d:"Anthologie de la poésie féminine occitane contemporaine : plus de soixante-dix poétesses, dont Zine."},
+ {i:"",t:"Fraternitat Mediterranèa",a:2026,k:"livre",b:Z+"/post/fraternitat-mediterran%C3%A8a-quand-les-voix-de-la-m%C3%A9diterran%C3%A9e-se-r%C3%A9pondent",s:Z+"/product-page/fraternitat-mediterranea",d:"Ouvrage collectif : les voix et les langues des deux rives de la Méditerranée se répondent."}
+];
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+function carte(s){
+  const el=document.createElement('article'); el.className='sortie';
+  const img = s.i ? `<div class="pochette"><img loading="lazy" src="pochettes/${s.i}.jpg" alt="Pochette : ${esc(s.t)}"></div>` : `<div class="pochette vide" aria-hidden="true">📖</div>`;
+  let btn='';
+  if(s.l) btn+=`<a class="ecouter" href="${s.l}" target="_blank" rel="noopener">▶ Écouter</a>`;
+  if(s.b) btn+=`<a class="histoire" href="${s.b}" target="_blank" rel="noopener">Histoire et paroles</a>`;
+  if(s.s) btn+=`<a class="acheter" href="${s.s}" target="_blank" rel="noopener">${s.k==='livre'?'Le livre':'Le CD'}</a>`;
+  el.innerHTML=`${img}<div><p class="titre">${esc(s.t)}</p><div class="annee">${s.a}</div><p class="desc">${esc(s.d)}</p><div class="actions">${btn}</div></div>`;
+  return el;
+}
+const recent=(x,y)=>y.a-x.a;
+for(const k of ['album','single','livre']) SORTIES.filter(s=>s.k===k).sort(recent).forEach(s=>document.getElementById('g-'+k).append(carte(s)));
+document.querySelectorAll('.onglets button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.onglets button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  document.querySelectorAll('section[data-k]').forEach(sec=>sec.hidden = b.dataset.f!=='tout' && sec.dataset.k!==b.dataset.f);
+}));
+if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js')}catch(e){}}
+</script>
+</body>
+</html>
