@@ -52,6 +52,28 @@
   .histoire{background:var(--violet);color:#fff}
   .acheter{border:2px solid var(--violet);color:var(--violet)}
 
+  .une{margin-top:10px}
+  .une .liste{gap:16px}
+  .une .sortie{border:2px solid var(--violet);grid-template-columns:1fr;text-align:center}
+  @media (min-width:600px){.une .sortie{grid-template-columns:230px 1fr;text-align:left}}
+  .une .pochette{max-width:300px;width:100%;margin:0 auto}
+  .une .actions{justify-content:center}
+  @media (min-width:600px){.une .actions{justify-content:flex-start}}
+  .ruban{display:inline-block;font-size:14px;font-weight:700;color:var(--encre);background:var(--mimosa);border-radius:999px;padding:3px 11px;margin-bottom:6px}
+  .videos{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:600px){.videos{grid-template-columns:1fr 1fr}.videos .film{grid-column:1/-1}}
+  .video{margin:0}
+  .ecran{position:relative;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden}
+  .ecran button{all:unset;cursor:pointer;position:absolute;inset:0;display:block}
+  .ecran img{width:100%;height:100%;object-fit:contain;display:block}
+  .ecran .play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:var(--violet);box-shadow:0 2px 10px rgba(0,0,0,.35)}
+  .ecran .play::after{content:"";position:absolute;left:29px;top:22px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent #fff}
+  .ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video figcaption{font-size:16px;margin-top:7px;font-weight:600}
+  .video figcaption span{display:block;font-weight:300;font-size:15px;color:var(--gris)}
+  .tout-youtube{text-align:center;margin:14px 0 0}
+  .tout-youtube a{color:var(--violet);font-weight:600}
+
   .integrale{margin:36px 0 0;background:var(--doux);border-radius:16px;padding:18px;text-align:center}
   .integrale .gros{font-family:"Open Sans",Sora,sans-serif;font-weight:800;font-size:21px;margin:0}
   .integrale p{margin:8px 0}
@@ -78,6 +100,22 @@
     <a href="https://music.apple.com/fr/artist/zine/1554399308">Apple Music</a>
     <a href="https://www.youtube.com/@Zine">YouTube</a>
   </nav>
+
+  <section class="une">
+    <h2>Mes deux albums à découvrir en premier</h2>
+    <div class="liste" id="g-une"></div>
+  </section>
+
+  <section>
+    <h2>Mes clips</h2>
+    <div class="videos">
+      <figure class="video"><div class="ecran" data-v="SKp3qaejm4E"></div><figcaption>Au mercat de la Libé<span>Le marché de la Libération, à Nice</span></figcaption></figure>
+      <figure class="video"><div class="ecran" data-v="rfHK5Z9_1JA"></div><figcaption>Ten-te fièra !<span>Pour les vallées, après la tempête Alex</span></figcaption></figure>
+      <figure class="video"><div class="ecran" data-v="26U3D-kioeA"></div><figcaption>Ànima en fèsta<span>Prix de la Créativité Féminine 2024</span></figcaption></figure>
+      <figure class="video film"><div class="ecran" data-v="war7IKv3MFA"></div><figcaption>Le film d’Alain Amiel<span>Un documentaire sur Zine, artiste niçoise</span></figcaption></figure>
+    </div>
+    <p class="tout-youtube"><a href="https://www.youtube.com/@Zine" target="_blank" rel="noopener">Toutes mes vidéos sur YouTube</a></p>
+  </section>
 
   <div class="onglets" role="group" aria-label="Choisir">
     <button type="button" data-f="tout" aria-pressed="true">Tout</button>
@@ -156,6 +194,20 @@ function carte(s){
 }
 const recent=(x,y)=>y.a-x.a;
 for(const k of ['album','single','livre']) SORTIES.filter(s=>s.k===k).sort(recent).forEach(s=>document.getElementById('g-'+k).append(carte(s)));
+// Les deux albums mis en avant (choix de Zine)
+[["3D77526C","Mon meilleur album"],["5E176DB0","Mon deuxième coup de cœur"]].forEach(([id,ruban])=>{
+  const s=SORTIES.find(x=>x.i===id); if(!s) return;
+  const c=carte(s); c.querySelector('.titre').insertAdjacentHTML('beforebegin',`<span class="ruban">${ruban}</span>`);
+  document.getElementById('g-une').append(c);
+});
+// Vidéos : l'image s'affiche d'abord, le lecteur YouTube ne se charge qu'au clic (plus léger sur téléphone)
+document.querySelectorAll('.ecran[data-v]').forEach(e=>{
+  const v=e.dataset.v, nom=e.nextElementSibling.firstChild.textContent;
+  e.innerHTML=`<button type="button" aria-label="Regarder : ${esc(nom)}"><img loading="lazy" src="https://i.ytimg.com/vi/${v}/hqdefault.jpg" alt=""><span class="play"></span></button>`;
+  e.querySelector('button').addEventListener('click',()=>{
+    e.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${v}?autoplay=1&rel=0" title="${esc(nom)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  });
+});
 document.querySelectorAll('.onglets button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.onglets button').forEach(x=>x.setAttribute('aria-pressed',x===b));
   document.querySelectorAll('section[data-k]').forEach(sec=>sec.hidden = b.dataset.f!=='tout' && sec.dataset.k!==b.dataset.f);
